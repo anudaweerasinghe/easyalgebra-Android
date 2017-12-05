@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MathApp</string>
+    <string name="a">If Pi is written to two decimal places backwards, it spells pie</string>
+    <string name="b">The fibonacci sequence can often be found in nature.</string>
+    <string name="c">The fibonacci sequence is encoded in the number 1/89</string>
+    <string name="d">The volume of a Pizza with radius z, and height a is PI × Z × Z × A</string>
+    <string name="e">The word hundred is derived from the word "hundrath", which actually means 120 and not 100.</string>
+    <string name="f">111,111,111 × 111,111,111 = 12,345,678,987,654,321.</string>
+    <string name="g">In a room of just 23 people there’s a 50% chance that two people have the same birthday.</string>
+    <string name="h">Zero is the only number that can not be represented in Roman Numerals</string>
+    <string name="i">(6 × 9) + (6 + 9) = 69.</string>
+    <string name="j">If you shuffle a pack of cards properly, chances are that exact order has never been seen before in the whole history of the universe.</string>
+    <string name="k">(6 × 9) + (6 + 9) = 69.</string>
+    <string name="l">(Zero is an even number.</string>
+    <string name="m">.999999... = 1</string>
+    <string name="n">10! seconds is exactly 6 weeks.</string>
+    <string name="o">The word "four" has four letters.</string>
+    <string name="p">the word "forty" is the only number that has all its letters in alphabetical order.</string>
+    <string name="q">The number 5,040 is divisible by exactly 60 different numbers.</string>
+    <string name="r">There are 43,252,003,274,489,856,000 ways to scramble a Rubiks Cube.</string>
+    <string name="s">There are 80,658,175,170,943,878,571,660,636,856, 403,766,975,289,505,440,883,277,824,000,000,000,000 ways to arrange a pack of cards.</string>
+    <string name="t">If you add up the squares of the first seven prime numbers, you get 666.</string>
+    <string name="u">"TWELVE PLUS ONE" is an anagram of "ELEVEN PLUS TWO".</string>
+    <string name="v">2520 is the smallest number that can be divided perfectly by all numbers from 1 through 10</string>
+    <string name="w">The equation sign was made by a Welsh Mathematician, who was sick of writing, is equal to.</string>
+    <string name="x">If space is truly infinite then the chances are that there is an exact copy of you elsewhere</string>
+    <string name="y">We live in a 3 dimensional world, but only see in 2 dimensions. </string>
+    <string name="z">Among all 2D shapes with the same perimeter, a circle has the largest area</string>
+
+
+</resources>

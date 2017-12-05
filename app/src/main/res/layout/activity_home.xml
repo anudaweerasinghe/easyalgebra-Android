@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.anuda.mathapp.HomeActivity">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/mathFacts_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        android:text="1/89 encodes the fibonacci sequence"/>
+
+    <Button
+        android:id="@+id/basicAlgebra_button"
+        android:layout_width="250dp"
+        android:paddingHorizontal="20dp"
+        android:layout_height="69dp"
+        android:text="Basic Algebra"
+        android:textColor="#FFFF"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="#757575"
+        android:layout_below="@+id/mathFacts_text"/>
+
+    <Button
+        android:id="@+id/LinearAlgebra_button"
+        android:layout_width="250dp"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="20dp"
+        android:layout_height="69dp"
+        android:background="#616161"
+        android:textColor="#FFFF"
+        android:text="Linear Algebra"
+        android:layout_below="@+id/basicAlgebra_button"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/quadratics_button"
+        android:layout_width="250dp"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="20dp"
+        android:textColor="#FFFF"
+        android:background="#424242"
+        android:layout_height="69dp"
+        android:text="Quadratics"
+        android:layout_below="@+id/LinearAlgebra_button"
+
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/word_button"
+        android:layout_width="250dp"
+        android:background="#212121"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="20dp"
+        android:textColor="#FFFF"
+        android:layout_height="69dp"
+        android:text="Word Problems"
+        android:layout_below="@+id/quadratics_button"
+        android:layout_marginTop="22dp"/>
+
+
+</RelativeLayout>

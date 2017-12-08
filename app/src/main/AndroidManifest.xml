@@ -20,7 +20,8 @@
         <activity android:name=".LinearAlgActivity" />
         <activity android:name=".QuadraticsActivity" />
         <activity android:name=".WordActivity" />
-        <activity android:name=".quadratics.QuadraticEquationsActivity"></activity>
+        <activity android:name=".quadratics.QuadraticEquationsActivity" />
+        <activity android:name=".linearalgebra.SimultEqnsActivity"></activity>
     </application>
 
 </manifest>

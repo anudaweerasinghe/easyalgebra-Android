@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.anuda.mathapp.linearalgebra.LinearEqnsActivity;
 import com.example.anuda.mathapp.linearalgebra.SimultEqnsActivity;
 import com.example.anuda.mathapp.quadratics.QuadraticEquationsActivity;
 
@@ -23,11 +24,22 @@ public class LinearAlgActivity extends AppCompatActivity {
 
         Button simEqnsBtn = (Button) findViewById(R.id.solvesSimultEqns);
 
+        Button linEqnsBtn = (Button) findViewById(R.id.solvesLinearEqns);
+
         simEqnsBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent intentNew = new Intent(LinearAlgActivity.this, SimultEqnsActivity.class);
+                startActivity(intentNew);
+            }
+        });
+
+        linEqnsBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intentNew = new Intent(LinearAlgActivity.this, LinearEqnsActivity.class);
                 startActivity(intentNew);
             }
         });

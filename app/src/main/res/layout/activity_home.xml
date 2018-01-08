@@ -17,17 +17,7 @@
         android:textSize="20dp"
         android:text="1/89 encodes the fibonacci sequence"/>
 
-    <Button
-        android:id="@+id/basicAlgebra_button"
-        android:layout_width="250dp"
-        android:paddingHorizontal="20dp"
-        android:layout_height="69dp"
-        android:text="Basic Algebra"
-        android:textColor="#FFFF"
-        android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
-        android:background="#757575"
-        android:layout_below="@+id/mathFacts_text"/>
+
 
     <Button
         android:id="@+id/LinearAlgebra_button"
@@ -38,7 +28,7 @@
         android:background="#616161"
         android:textColor="#FFFF"
         android:text="Linear Algebra"
-        android:layout_below="@+id/basicAlgebra_button"
+        android:layout_below="@+id/mathFacts_text"
         android:layout_marginTop="22dp" />
 
     <Button
@@ -54,17 +44,7 @@
 
         android:layout_marginTop="22dp" />
 
-    <Button
-        android:id="@+id/word_button"
-        android:layout_width="250dp"
-        android:background="#212121"
-        android:layout_centerHorizontal="true"
-        android:paddingHorizontal="20dp"
-        android:textColor="#FFFF"
-        android:layout_height="69dp"
-        android:text="Word Problems"
-        android:layout_below="@+id/quadratics_button"
-        android:layout_marginTop="22dp"/>
+
 
 
 </RelativeLayout>

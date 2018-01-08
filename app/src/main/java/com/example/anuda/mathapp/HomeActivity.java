@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.anuda.mathapp.quadratics.QuadraticEquationsActivity;
+
 import org.w3c.dom.Text;
 
 import java.util.Random;
@@ -21,18 +23,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mathFactsText = (TextView)findViewById(R.id.mathFacts_text);
-        Button basicAlgebrabtn = (Button)findViewById(R.id.basicAlgebra_button);
         Button linearAlgebrabtn = (Button)findViewById(R.id.LinearAlgebra_button);
         Button quadraticsbtn = (Button) findViewById(R.id.quadratics_button);
-        Button wordProblembtn = (Button) findViewById(R.id.word_button);
 
-        basicAlgebrabtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentNew = new Intent(HomeActivity.this, BasicAlgActivity.class);
-                startActivity(intentNew);
-            }
-        });
+
 
         linearAlgebrabtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,18 +39,12 @@ public class HomeActivity extends AppCompatActivity {
         quadraticsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentNew = new Intent (HomeActivity.this, QuadraticsActivity.class);
+                Intent intentNew = new Intent (HomeActivity.this, QuadraticEquationsActivity.class);
                 startActivity(intentNew);
             }
         });
 
-        wordProblembtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentNew = new Intent (HomeActivity.this, WordActivity.class);
-                startActivity(intentNew);
-            }
-        });
+
 
 
         mathFactGeneration();

@@ -18,14 +18,26 @@
 
 
     <Button
+        android:id="@+id/solvesLinearEqns"
+        android:layout_width="250dp"
+        android:paddingHorizontal="20dp"
+        android:layout_height="69dp"
+        android:text="Solve Linear Equations"
+        android:textColor="#FFFF"
+        android:layout_centerHorizontal="true"
+        android:background="#757575"
+        android:layout_below="@+id/title_text" />
+
+    <Button
         android:id="@+id/solvesSimultEqns"
         android:layout_width="250dp"
         android:paddingHorizontal="20dp"
         android:layout_height="69dp"
         android:text="Solve Simultaneous Equations"
+        android:layout_marginTop="20dp"
         android:textColor="#FFFF"
         android:layout_centerHorizontal="true"
         android:background="#757575"
-        android:layout_below="@+id/title_text" />
+        android:layout_below="@+id/solvesLinearEqns" />
 
 </RelativeLayout>

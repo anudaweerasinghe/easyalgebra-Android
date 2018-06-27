@@ -16,6 +16,8 @@ import com.example.anuda.mathapp.quadratics.QuadraticEquationsActivity;
 import java.text.DecimalFormat;
 import java.util.Random;
 
+import helpers.Precision;
+
 public class SimultEqnsActivity extends AppCompatActivity {
 
     TextView equationText;
@@ -37,6 +39,9 @@ public class SimultEqnsActivity extends AppCompatActivity {
 
     double x;
     double y;
+
+    double xDouble;
+    double yDouble;
 
 
     String ansX;
@@ -60,7 +65,12 @@ public class SimultEqnsActivity extends AppCompatActivity {
        nextBtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               checkAns();
+               if(xText.getText().toString().equals("")|| yText.getText().toString().equals("")){
+                   Toast.makeText(SimultEqnsActivity.this, "Please enter both answers, to get a solution!",
+                           Toast.LENGTH_LONG).show();
+               }else {
+                   checkAns();
+               }
            }
        });
 
@@ -91,6 +101,8 @@ public class SimultEqnsActivity extends AppCompatActivity {
         Random r6 = new Random();
         f = r6.nextInt(10-(-10))+(-10);
 
+
+
         equationText.setText(a+"x + "+b+"y = "+c+"\n"+d+"x + "+e+"y = "+f);
 
         solveEquation();
@@ -112,11 +124,35 @@ public class SimultEqnsActivity extends AppCompatActivity {
 
             y = DY/D;
 
-            DecimalFormat format = new DecimalFormat("##.##");
 
-            ansX = format.format(x);
 
-            ansY = format.format(y);
+            if(Double.isInfinite(x)){
+                genEquation();
+            }else{
+                if (x % 1 == 0) {
+                    DecimalFormat format = new DecimalFormat("##");
+                    ansX = format.format(x);
+                } else {
+
+                    xDouble = Precision.round(x,2);
+                    ansX = Double.toString(xDouble);
+
+                }
+            }
+
+            if(Double.isInfinite(y)){
+                genEquation();
+            }else{
+                if (y % 1 == 0) {
+                    DecimalFormat format = new DecimalFormat("##");
+                    ansY = format.format(y);
+                } else {
+
+                    yDouble = Precision.round(y,2);
+                    ansY = Double.toString(yDouble);
+
+                }
+            }
 
         }else{
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MathApp</string>
+    <string name="app_name">Easy Algebra</string>
     <string name="a">If Pi is written to two decimal places backwards, it spells pie</string>
     <string name="b">The fibonacci sequence can often be found in nature.</string>
     <string name="c">The fibonacci sequence is encoded in the number 1/89</string>
@@ -26,6 +26,8 @@
     <string name="x">If space is truly infinite then the chances are that there is an exact copy of you elsewhere</string>
     <string name="y">We live in a 3 dimensional world, but only see in 2 dimensions. </string>
     <string name="z">Among all 2D shapes with the same perimeter, a circle has the largest area</string>
+
+    <string name = "answer_hint">No more than two decimals</string>>
 
 
 </resources>

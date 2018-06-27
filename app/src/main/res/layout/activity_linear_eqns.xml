@@ -52,7 +52,7 @@
         android:layout_marginTop="52dp"
         android:ems="15"
         android:inputType="text"
-        android:hint="Answer to two decimal places"/>
+        android:hint="@string/answer_hint"/>
 
 
 

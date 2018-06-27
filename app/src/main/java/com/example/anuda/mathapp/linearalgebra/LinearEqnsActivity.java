@@ -16,6 +16,8 @@ import com.example.anuda.mathapp.quadratics.QuadraticEquationsActivity;
 import java.text.DecimalFormat;
 import java.util.Random;
 
+import helpers.Precision;
+
 public class LinearEqnsActivity extends AppCompatActivity {
 
     Button next;
@@ -33,8 +35,8 @@ public class LinearEqnsActivity extends AppCompatActivity {
     double dminb;
     double aminc;
 
+    Double xDouble;
     String xString;
-
 
 
     @Override
@@ -54,11 +56,11 @@ public class LinearEqnsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(ansText.getText().equals("")){
-                    Toast.makeText(LinearEqnsActivity.this, "Please enter both answers, to get a solution!",
+                if (ansText.getText().toString().equals("")) {
+                    Toast.makeText(LinearEqnsActivity.this, "Please enter an answer, to get a solution!",
                             Toast.LENGTH_LONG).show();
 
-                }else{
+                } else {
                     checkAns();
                 }
 
@@ -68,38 +70,38 @@ public class LinearEqnsActivity extends AppCompatActivity {
     }
 
 
-    public void genEquation(){
+    public void genEquation() {
 
 
         ansText.setText("");
 
         Random r1 = new Random();
-        a = r1.nextInt(10-0);
+        a = r1.nextInt(10 - 0);
 
         Random r2 = new Random();
-        b = r2.nextInt(10-0);
+        b = r2.nextInt(10 - 0);
 
         Random r3 = new Random();
-        c = r3.nextInt(10-0);
+        c = r3.nextInt(10 - 0);
 
         Random r4 = new Random();
-        d = r4.nextInt(10-0);
+        d = r4.nextInt(10 - 0);
 
-        if(a==0){
-            eqnText.setText(b+" = "+c+"x + "+d);
-        }else if(c==0){
+        if (a == 0) {
+            eqnText.setText(b + " = " + c + "x + " + d);
+        } else if (c == 0) {
 
-            eqnText.setText(a+"x + "+b+" = "+d);
+            eqnText.setText(a + "x + " + b + " = " + d);
 
-        }else if(b==0){
+        } else if (b == 0) {
 
             eqnText.setText(a + "x" + " = " + c + "x + " + d);
 
-        }else if(d==0){
+        } else if (d == 0) {
 
             eqnText.setText(a + "x + " + b + " = " + c + "x");
 
-        }else {
+        } else {
             eqnText.setText(a + "x + " + b + " = " + c + "x + " + d);
         }
 
@@ -107,35 +109,45 @@ public class LinearEqnsActivity extends AppCompatActivity {
         solveEquation();
 
 
+    }
+
+    public void solveEquation() {
+
+        dminb = d - b;
+
+        aminc = a - c;
+
+        x = dminb / aminc;
+
+        if(Double.isInfinite(x)){
+            genEquation();
+        }else{
+            if (x % 1 == 0) {
+                DecimalFormat format = new DecimalFormat("##");
+                xString = format.format(x);
+            } else {
+
+                xDouble = Precision.round(x,2);
+                xString = Double.toString(xDouble);
+
+            }
+        }
+
+
+
+
 
     }
 
-    public void solveEquation(){
 
-        dminb = d-b;
+    public void checkAns() {
 
-        aminc = a-c;
-
-        x = dminb/aminc;
-
-        DecimalFormat format = new DecimalFormat("##.##");
-
-        xString = format.format(x);
-
-//        ansText.setText(xString);
-
-
-    }
-
-
-    public void checkAns(){
-
-        if(ansText.getText().toString().equals(xString)){
+        if (ansText.getText().toString().equals(xString)) {
 
             nextCorrectAns(new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(LinearEqnsActivity.this, "The correct answer is :\nx = "+xString,
+                    Toast.makeText(LinearEqnsActivity.this, "The correct answer is :\nx = " + xString,
                             Toast.LENGTH_LONG).show();
 
 
@@ -144,11 +156,11 @@ public class LinearEqnsActivity extends AppCompatActivity {
             });
 
 
-        }else{
+        } else {
             notCorrect(new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(LinearEqnsActivity.this, "The correct answer is :\nx = "+xString,
+                    Toast.makeText(LinearEqnsActivity.this, "The correct answer is :\nx = " + xString,
                             Toast.LENGTH_LONG).show();
 
                     genEquation();
@@ -172,7 +184,7 @@ public class LinearEqnsActivity extends AppCompatActivity {
     private void notCorrect(DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(LinearEqnsActivity.this)
                 .setTitle("Wrong! Try harder.")
-                .setMessage("Remember to write your answer rounded to two decimal places.")
+                .setMessage("Remember to write your answer rounded to two decimal places if it has many decimal places.")
                 .setPositiveButton("Move On", okListener)
                 .setNegativeButton("Try again", null)
                 .create()

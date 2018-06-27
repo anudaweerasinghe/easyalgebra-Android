@@ -18,6 +18,8 @@ import org.w3c.dom.Text;
 import java.text.DecimalFormat;
 import java.util.Random;
 
+import helpers.Precision;
+
 import static com.example.anuda.mathapp.R.string.d;
 
 public class QuadraticEquationsActivity extends AppCompatActivity {
@@ -35,6 +37,9 @@ public class QuadraticEquationsActivity extends AppCompatActivity {
     double d;
     String ans1;
     String ans2;
+
+    double x1Double;
+    double x2Double;
 
 
     @Override
@@ -114,14 +119,47 @@ public class QuadraticEquationsActivity extends AppCompatActivity {
             x1 = (-b + Math.sqrt(d))/(2*a);
             x2 = (-b - Math.sqrt(d))/(2*a);
 
-        DecimalFormat format = new DecimalFormat("##.00");
+//        DecimalFormat format = new DecimalFormat("##.00");
 
-        ans1 = format.format(x1);
+//        ans1 = format.format(x1);
+//
+//        ans2 = format.format(x2);
 
-        ans2 = format.format(x2);
+        if(x1==-0){
+            x1=0;
+        }
 
-//            x1Text.setText("x1 = "+ format.format(x1));
-//            x2Text.setText("x2 = "+ format.format(x2));
+        if(x2==-0){
+            x2=0;
+        }
+
+        if(Double.isInfinite(x1)){
+            genEquation();
+        }else{
+            if (x1 % 1 == 0) {
+                DecimalFormat format = new DecimalFormat("##");
+                ans1 = format.format(x1);
+            } else {
+
+                x1Double = Precision.round(x1,2);
+                ans1 = Double.toString(x1Double);
+
+            }
+        }
+
+        if(Double.isInfinite(x2)){
+            genEquation();
+        }else{
+            if (x2 % 1 == 0) {
+                DecimalFormat format = new DecimalFormat("##");
+                ans2 = format.format(x2);
+            } else {
+
+                x2Double = Precision.round(x2,2);
+                ans2 = Double.toString(x2Double);
+
+            }
+        }
 
 
     }
